@@ -49,7 +49,7 @@ export default NextAuth({
   // https://next-auth.js.org/configuration/databases
   //
   // Notes:
-  // * You must to install an appropriate node_module for your database
+  // * You must install an appropriate node_module for your database
   // * The Email provider requires a database (OAuth providers do not)
   //database: process.env.DATABASE_URL,
 
@@ -87,15 +87,16 @@ export default NextAuth({
     // decode: async ({ secret, token, maxAge }) => {},
   },
 
-  // You can define custom pages to override the built-in pages.
+  // You can define custom pages to override the built-in ones. These will be regular Next.js pages
+  // so ensure that they are placed outside of the '/api' folder, e.g. signIn: '/auth/mycustom-signin'
   // The routes shown here are the default URLs that will be used when a custom
   // pages is not specified for that route.
   // https://next-auth.js.org/configuration/pages
   pages: {
-    // signIn: '/api/auth/signin',  // Displays signin buttons
-    // signOut: '/api/auth/signout', // Displays form with sign out button
-    // error: '/api/auth/error', // Error code passed in query string as ?error=
-    // verifyRequest: '/api/auth/verify-request', // Used for check email page
+    // signIn: '/auth/signin',  // Displays signin buttons
+    // signOut: '/auth/signout', // Displays form with sign out button
+    // error: '/auth/error', // Error code passed in query string as ?error=
+    // verifyRequest: '/auth/verify-request', // Used for check email page
     // newUser: null // If set, new users will be directed here on first sign in
   },
 
